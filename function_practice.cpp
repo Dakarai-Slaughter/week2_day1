@@ -8,8 +8,8 @@ void greet(){
 
 
 
-int add(int a, int b){
-    return(a + b);
+int add(int a, int b, int c){
+    return c = a + b;
 }
 
 int subtract(int a, int b){
@@ -24,11 +24,11 @@ int divide(int a, int b){
     return(a / b);
 }//end of divide function
 
-char math (char op, int a, int a){   
-int answer;
+int math (char op, int a, int a, int c){   
+   // int answer;
     switch(op){
         case '+'
-            int answer = add(num1, num2);
+            int answer = add(a, b, c);
             std::cout << answer << std::endl;
             break;
         case '-'
@@ -54,7 +54,8 @@ int main(){
     int num2;
     int answer;
     char op;
-
+    int num3;
+ 
     std::cout<<"Give me a number!"<<std::endl;
     std::cin>>num1;
 
@@ -64,7 +65,7 @@ int main(){
     std::cout<<"What opporeter would you like to use?"
     std::cin>>op
 
-    math()
+    math(num1, num2, op, num3)
 
     return 0;
 }
