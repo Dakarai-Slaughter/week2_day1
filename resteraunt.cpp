@@ -75,7 +75,6 @@ int order (){
         }
             
     }
-    //item = item - 1;
     return item;
 }
 
@@ -114,10 +113,32 @@ int main (){
 
     greet();
     menu();
-    while (user_in == "y"){
+    char user_input;
+    bool add_to_order = true;
+    while (add_to_order == true){
         order_list.push_back(order()-1);
         std::cout<<"would you like to add something to your order?"<<std::endl;
-        std::cin>>user_in;
+        bool repeat_verification = true;
+        while (repeat_verification == true){
+            std::cin>>user_input;
+            switch (user_input){
+                case 'y':
+                case 'Y':
+                    add_to_order = true;
+                    repeat_verification = false;
+                    break;
+                case 'n':
+                case 'N':
+                    add_to_order = false;
+                    repeat_verification = false;
+                    break;
+                default:
+                    
+                    std::cout<<"That is not a valid option, please type \"Y\" for yes or \"N\" for no."<<std::endl;
+                    std::cin.clear(); 
+                    std::cin.ignore(1000, '\n');
+            }
+        }
     }
     
     //checkout
